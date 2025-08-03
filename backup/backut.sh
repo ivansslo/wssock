@@ -111,7 +111,7 @@ zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://github.com/kenDevXD/userbackup.git /root/user-backup/ &> /dev/null
+git clone https://github.com/ivansslo/userbackup.git /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -130,15 +130,15 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 
 Save_And_Exit () {
     cd /root/user-backup
-    git config --global user.email "105465912+kenDevXD@users.noreply.github.com" &> /dev/null
-    git config --global user.name "kenDevXD" &> /dev/null
+    git config --global user.email "91882824+ivansslo@users.noreply.github.com" &> /dev/null
+    git config --global user.name "ivansslo" &> /dev/null
     rm -fr .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/kenDevXD/userbackup
-    git push -f https://ghp_BCugzEPypFU5MNGL17w41UcWxFw4F15sYSH@github.com/kenDevXD/userbackup.git &> /dev/null
+    git remote add origin https://github.com/ivansslo/userbackup
+    git push -f https://ghp_BCugzEPypFU5MNGL17w41UcWxFw4F15sYSH@github.com/ivansslo/userbackup.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
@@ -153,7 +153,7 @@ sleep 1
 echo -e "[ ${GREEN}INFO${NC} ] Processing updating server...... "
 Save_And_Exit
 fi
-link="https://raw.githubusercontent.com/kenDevXD/userbackup/main/$NameUser/$NameUser.zip"
+link="https://raw.githubusercontent.com/ivansslo/userbackup/main/$NameUser/$NameUser.zip"
 sleep 1
 echo -e "[ ${GREEN}INFO${NC} ] Backup done "
 sleep 1
@@ -183,7 +183,7 @@ function restore(){
 cd
 read -rp "Enter Name File Your Backup  : " -e NameUser
 
-cekdata=$(curl -sS https://raw.githubusercontent.com/kenDevXD/userbackup/main/$NameUser/$NameUser.zip | grep 404 | awk '{print $1}' | cut -d: -f1)
+cekdata=$(curl -sS https://raw.githubusercontent.com/ivansslo/userbackup/main/$NameUser/$NameUser.zip | grep 404 | awk '{print $1}' | cut -d: -f1)
 
 [[ "$cekdata" = "404" ]] && {
 red "Data not found / you never backup"
@@ -196,7 +196,7 @@ echo -e "[ ${GREEN}INFO${NC} ] • Restore Data..."
 read -rp "Password File: " -e InputPass
 echo -e "[ ${GREEN}INFO${NC} ] • Downloading data.."
 mkdir -p /root/backup
-wget -q -O /root/backup/backup.zip "https://raw.githubusercontent.com/kenDevXD/userbackup/main/$NameUser/$NameUser.zip" &> /dev/null
+wget -q -O /root/backup/backup.zip "https://raw.githubusercontent.com/ivansslo/userbackup/main/$NameUser/$NameUser.zip" &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Getting your data..."
 unzip -P $InputPass /root/backup/backup.zip &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Starting to restore data..."
