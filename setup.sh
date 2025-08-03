@@ -3,7 +3,7 @@ dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Dat
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
-REPO="https://raw.githubusercontent.com/sasak3/v4/main/"
+REPO="https://raw.githubusercontent.com/ivansslo/v4/main/"
 clear
 red='\e[1;31m'
 green='\e[1;32m'
@@ -108,7 +108,7 @@ mkdir -p /var/lib/SIJA >/dev/null 2>&1
 echo "IP=" >> /var/lib/SIJA/ipvps.conf
 
 echo ""
-wget -q https://raw.githubusercontent.com/sasak3/v4/main/dep.sh;chmod +x tools.sh;./dep.sh
+wget -q https://raw.githubusercontent.com/ivansslo/v4/main/dep.sh;chmod +x tools.sh;./dep.sh
 rm dep.sh
 clear
 echo ""
@@ -144,11 +144,11 @@ echo ""
 
 if test $dom -eq 1; then
 clear
-wget -q -O /root/cf.sh "https://raw.githubusercontent.com/sasak3/v4/main/sowdns/cf.sh"
+wget -q -O /root/cf.sh "https://raw.githubusercontent.com/ivansslo/v4/main/sowdns/cf.sh"
 chmod +x /root/cf.sh
 ./cf.sh
 elif test $dom -eq 2; then
-wget -q -O /root/cf1.sh "https://raw.githubusercontent.com/sasak3/v4/main/sowdns/cf1.sh"
+wget -q -O /root/cf1.sh "https://raw.githubusercontent.com/ivansslo/v4/main/sowdns/cf1.sh"
 chmod +x /root/cf1.sh
 ./cf1.sh
 elif test $dom -eq 3; then
@@ -192,13 +192,13 @@ Multi Port By HR-vpn
 "
 curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 clear
-wget https://raw.githubusercontent.com/sasak3/v4/main/slowdns/cfslow.sh && chmod +x cfslow.sh && ./cfslow.sh
+wget https://raw.githubusercontent.com/ivansslo/v4/main/slowdns/cfslow.sh && chmod +x cfslow.sh && ./cfslow.sh
 rm -f /root/cfslow.sh
 clear
 #install ssh ovpn
 echo -e "install ssh ovpn "
 sleep 2
-wget https://raw.githubusercontent.com/sasak3/v4/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/ivansslo/v4/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 clear
 #instal backup
 echo -e "install bbr"
@@ -208,13 +208,13 @@ clear
 #Instal Xray
 echo -e "intall xray"
 sleep 2
-wget https://raw.githubusercontent.com/sasak3/v4/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
-wget https://raw.githubusercontent.com/sasak3/v4/main/Sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
+wget https://raw.githubusercontent.com/ivansslo/v4/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget https://raw.githubusercontent.com/ivansslo/v4/main/Sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
 #Instal slowdns
 ### Pasang SlowDNS
 echo -e "instal slowDNS"
-wget -q -O slow.sh https://raw.githubusercontent.com/sasak3/v4/main/slowdns/slow.sh && chmod +x slow.sh && ./slow.sh
+wget -q -O slow.sh https://raw.githubusercontent.com/ivansslo/v4/main/slowdns/slow.sh && chmod +x slow.sh && ./slow.sh
 clear
 #download extra menu
 fun_bar() {
@@ -244,7 +244,7 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-wget -q https://raw.githubusercontent.com/sasak3/v4/main/ssh/update.sh;chmod +x update.sh;./update.sh
+wget -q https://raw.githubusercontent.com/ivansslo/v4/main/ssh/update.sh;chmod +x update.sh;./update.sh
 rm update.sh
 }
 netfilter-persistent
